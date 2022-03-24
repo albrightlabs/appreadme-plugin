@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ReadMe
+
+# Model Form Field configuration
+form: $/albrightlabs/appreadme/models/readme/fields.yaml
+
+# Model Class name
+modelClass: Albrightlabs\AppReadMe\Models\ReadMe
+
+# Default redirect location
+defaultRedirect: albrightlabs/appreadme/readmes
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: albrightlabs/appreadme/readmes/preview/:id
+    redirectClose: albrightlabs/appreadme/readmes
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: albrightlabs/appreadme/readmes/preview/:id
+    redirectClose: albrightlabs/appreadme/readmes
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

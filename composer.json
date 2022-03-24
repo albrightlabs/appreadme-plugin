@@ -1,0 +1,9 @@
+{
+    "name": "albrightlabs/appreadme-plugin",
+    "type": "october-plugin",
+    "description": "Provides the ability to easily add an App ReadMe with usage documentation to the admin area settings panel.",
+    "require": {
+        "composer/installers": "~1.0",
+        "october/system": "^2.0"
+    }
+}

@@ -1,0 +1,8 @@
+<div data-control="toolbar">
+    <a
+        href="<?= Backend::url('albrightlabs/appreadme/readmes/create') ?>"
+        <?php if (!$this->user->hasAccess('albrightlabs.appreadme.manage_readmes')) { ?>disabled<?php } ?>
+        class="btn btn-primary oc-icon-plus">
+        <?= e(trans('backend::lang.list.create_button', ['name'=>'ReadMe'])) ?>
+    </a>
+</div>

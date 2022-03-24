@@ -1,0 +1,21 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+        label: Title
+        searchable: true
+    tags:
+        label: Tags
+        type: partial
+        path: column_tags
+    updated_at:
+        label: Updated
+        type: date
+        format: n/j/Y g:ia
+    created_at:
+        label: Created
+        type: date
+        format: n/j/Y g:ia
+        invisible: true

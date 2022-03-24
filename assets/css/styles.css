@@ -1,0 +1,65 @@
+/* provide badge styles from bootstrap, slightly customized for sizing */
+.badge {
+  display: inline-block;
+  padding: .25em .4em;
+  font-size: 85%;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+}
+.badge-primary {
+  color: #fff;
+  background-color: #007bff;
+}
+.badge-secondary {
+  color: #fff;
+  background-color: #6c757d;
+}
+.badge-success {
+  color: #fff;
+  background-color: #28a745;
+}
+.badge-danger {
+  color: #fff;
+  background-color: #dc3545;
+}
+.badge-warning {
+  color: #212529;
+  background-color: #ffc107;
+}
+.badge-info {
+  color: #fff;
+  background-color: #17a2b8;
+}
+.badge-light {
+  color: #212529;
+  background-color: #f8f9fa;
+}
+.badge-dark {
+  color: #fff;
+  background-color: #343a40;
+}
+/* styles readme preview */
+.readme-section {
+  margin-top: 24px;
+}
+.readme-title {
+  font-weight: 600;
+}
+.readme-section-title {
+  font-weight: 600;
+}
+.readme-meta {
+  display: block;
+  width: 100%;
+}
+.readme-spacer {
+  margin: 24px 0;
+  border-top: 1px solid #eee;
+  height: 0;
+  display: block;
+  width: 100%;
+}

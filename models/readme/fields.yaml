@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Title
+    tags:
+        label: Tags
+        type: taglist
+        comment: Separate tags with a comma
+    sections:
+        title: Sections
+        type: repeater
+        titleFrom: title
+        prompt: Add new section
+        form:
+            fields:
+                title:
+                    label: Title
+                content:
+                    label: Content
+                    type: richeditor

@@ -1,0 +1,77 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('albrightlabs/appreadme/readmes') ?>">ReadMes</a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <div class="form-preview">
+
+        <h1 class="h3 readme-title"><?= $formModel->title ?></h1>
+
+        <div id="readme-meta" class="text-muted">
+          Updated <?= date('n/j/Y g:ia', strtotime($formModel->updated_at)); ?>
+          &nbsp; &bull; &nbsp;
+          Created <?= date('n/j/Y g:ia', strtotime($formModel->created_at)); ?>
+        </div>
+
+        <?php if(null != $formModel->sections){ ?>
+            <?php if($sections = $formModel->sections){ ?>
+                <?php if(count($sections) > 1){ ?>
+                    <div class="readme-section">
+                        <h2 class="h4 readme-section-title">Index</h2>
+                        <?php foreach($sections as $index => $section){ ?>
+                            <a href="#readme-section-<?= $index ?>"><?= $section['title'] ?></a><br />
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+        <?php } ?>
+
+        <div class="readme-spacer"></div>
+
+        <?php if(null != $formModel->sections){ ?>
+            <?php if($sections = $formModel->sections){ ?>
+                <?php foreach($sections as $index => $section){ ?>
+                    <div id="readme-section-<?= $index ?>" class="readme-section">
+                        <h2 class="h4 readme-section-title"><?= $section['title'] ?></h2>
+                        <?= $section['content'] ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+        <?php } ?>
+    </div>
+
+    <div data-control="toolbar">
+        <div class="loading-indicator-container">
+            <p>
+                <a href="<?= Backend::url('albrightlabs/appreadme/readmes') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a>
+                &nbsp;
+                <?php if ($this->user->hasAccess('albrightlabs.appreadme.manage_readmes')) { ?>
+                    <a
+                        href="<?= Backend::url('albrightlabs/appreadme/readmes/update/'.$formModel->id) ?>"
+                        class="btn btn-primary oc-icon-pencil">
+                        Edit
+                    </a>
+                    &nbsp;
+                    <a
+                        href="javascript;"
+                        data-request="onDelete"
+                        data-request-data="id: <?=$formModel->id ?>,"
+                        data-load-indicator="<?= e(trans('backend::lang.form.deleting_name', ['name'=>$formRecordName])) ?>"
+                        data-request-confirm="<?= e(trans('backend::lang.form.confirm_delete')) ?>"
+                        class="btn btn-danger oc-icon-trash">
+                        Delete
+                    </a>
+                <?php } ?>
+            </p>
+        </div>
+  </div>
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('albrightlabs/appreadme/readmes') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
+
+<?php endif ?>

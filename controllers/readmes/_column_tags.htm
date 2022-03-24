@@ -1,0 +1,5 @@
+<?php if($tags = explode(',', $record->tags)){ ?>
+    <?php foreach($tags as $tag){ ?>
+        <span class="badge badge-secondary"><?= $tag ?></span>
+    <?php } ?>
+<?php } ?>
