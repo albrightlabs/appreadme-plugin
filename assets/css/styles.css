@@ -52,6 +52,10 @@
 .readme-section-title {
   font-weight: 600;
 }
+.readme-subsection-title {
+  font-weight: 600;
+  font-size: 16px;
+}
 .readme-meta {
   display: block;
   width: 100%;

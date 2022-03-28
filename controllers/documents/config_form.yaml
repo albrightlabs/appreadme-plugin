@@ -17,13 +17,13 @@ defaultRedirect: albrightlabs/appreadme/documents
 # Create page
 create:
     title: backend::lang.form.create_title
-    redirect: albrightlabs/appreadme/documents/update/:id
+    redirect: albrightlabs/appreadme/documents/preview/:id
     redirectClose: albrightlabs/appreadme/documents
 
 # Update page
 update:
     title: backend::lang.form.update_title
-    redirect: albrightlabs/appreadme/documents
+    redirect: albrightlabs/appreadme/documents/preview/:id
     redirectClose: albrightlabs/appreadme/documents
 
 # Preview page

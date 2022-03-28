@@ -22,9 +22,18 @@
                 <?php if(count($sections) > 1){ ?>
                     <div class="readme-section">
                         <h2 class="h4 readme-section-title">Index</h2>
-                        <?php foreach($sections as $index => $section){ ?>
-                            <a href="#readme-section-<?= $index ?>"><?= $section['title'] ?></a><br />
-                        <?php } ?>
+                        <ul style="padding-left: 16px;">
+                            <?php foreach($sections as $index => $section){ ?>
+                                <li><a href="#readme-section-<?= $index ?>"><?= $section['title'] ?></a></li>
+                                <?php if($subsections = $section['subsections']){ ?>
+                                    <ul style="padding-left: 16px;">
+                                    <?php foreach($subsections as $subindex => $subsection){ ?>
+                                        <li><a href="#readme-section-<?= $index ?>-<?= $subindex ?>"><?= $subsection['title'] ?></a></li>
+                                    <?php } ?>
+                                  </ul>
+                                <?php } ?>
+                            <?php } ?>
+                        </ul>
                     </div>
                 <?php } ?>
             <?php } ?>
@@ -39,6 +48,14 @@
                         <h2 class="h4 readme-section-title"><?= $section['title'] ?></h2>
                         <?= $section['content'] ?>
                     </div>
+                    <?php if($subsections = $section['subsections']){ ?>
+                        <?php foreach($subsections as $subindex => $subsection){ ?>
+                            <div id="readme-section-<?= $index ?>-<?= $subindex ?>" class="readme-section">
+                                <h3 class="h5 readme-subsection-title"><?= $subsection['title'] ?></h3>
+                                <?= $subsection['content'] ?>
+                            </div>
+                        <?php } ?>
+                    <?php } ?>
                 <?php } ?>
             <?php } ?>
         <?php } ?>
