@@ -5,7 +5,7 @@ use Backend;
 use Redirect;
 use BackendMenu;
 use Backend\Classes\Controller;
-use Albrightlabs\AppReadMe\Models\ReadMe;
+use Albrightlabs\AppReadMe\Models\Document;
 use System\Classes\SettingsManager;
 /**
  * Documents Backend Controller
@@ -44,10 +44,10 @@ class Documents extends Controller
     public function preview_onDelete()
     {
         $data = post();
-        $readme = ReadMe::find($data['id']);
+        $readme = Document::find($data['id']);
         $readme->delete();
 
-        Flash::success('ReadMe deleted');
+        Flash::success('Document deleted');
         return Redirect::to(Backend::url('albrightlabs/appreadme/documents'));
     }
 }

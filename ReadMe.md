@@ -28,7 +28,7 @@ Run either of the following commands:
 ## 🚨 Are there any requirements for this plugin?
 None, other than installation and the creation of documents.
 
-## 🔥 How to add a new ReadMe
+## 🔥 How to add a new Document
 * From the admin area, go to Settings > About & Documentation and the "New Document" button above the list
 * Enter a title for the document
 * Enter tags for the document (separated by comma) to help with organization
@@ -39,13 +39,13 @@ None, other than installation and the creation of documents.
 * Save the document
 ***Note: Managing Documents requires an admin to have "manage readmes" access***
 
-## 🔥 How to edit an existing ReadMe
+## 🔥 How to edit an existing Document
 * From the admin area, go to Settings > About & Documentation and select a document from the list
 * Click the edit button at the bottom and make the needed revisions
 * Save the document
 ***Note: Managing Documents requires an admin to have "manage readmes" access***
 
-## 🔥 How to delete an existing ReadMe
+## 🔥 How to delete an existing Document
 * From the admin area, go to Settings > About & Documentation and select a document from the list
 * Click the delete button at the bottom and confirm deletion of the document
 ***Note: Managing Documents requires an admin to have "manage readmes" access***

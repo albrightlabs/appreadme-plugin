@@ -33,3 +33,4 @@ fields:
                             content:
                                 label: Content
                                 type: richeditor
+                    cssClass: field-index

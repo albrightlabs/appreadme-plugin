@@ -6,6 +6,7 @@ columns:
     title:
         label: Title
         searchable: true
+        cssClass: text-semibold
     tags:
         label: Tags
         type: partial
