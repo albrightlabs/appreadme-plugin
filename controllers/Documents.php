@@ -7,11 +7,10 @@ use BackendMenu;
 use Backend\Classes\Controller;
 use Albrightlabs\AppReadMe\Models\ReadMe;
 use System\Classes\SettingsManager;
-
 /**
- * Read Mes Backend Controller
+ * Documents Backend Controller
  */
-class ReadMes extends Controller
+class Documents extends Controller
 {
     public $implement = [
         \Backend\Behaviors\FormController::class,
@@ -49,6 +48,6 @@ class ReadMes extends Controller
         $readme->delete();
 
         Flash::success('ReadMe deleted');
-        return Redirect::to(Backend::url('albrightlabs/appreadme/readmes'));
+        return Redirect::to(Backend::url('albrightlabs/appreadme/documents'));
     }
 }

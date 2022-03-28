@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/albrightlabs/appreadme/models/readme/columns.yaml
+list: $/albrightlabs/appreadme/models/document/columns.yaml
 
 # Model Class name
-modelClass: Albrightlabs\AppReadMe\Models\ReadMe
+modelClass: Albrightlabs\AppReadMe\Models\Document
 
 # List Title
-title: Manage ReadMes
+title: Manage Documents
 
 # Link URL for each record
-recordUrl: albrightlabs/appreadme/readmes/preview/:id
+recordUrl: albrightlabs/appreadme/documents/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records
@@ -30,12 +30,12 @@ showSetup: true
 showSorting: true
 
 # Default sorting column
-defaultSort:
-    column: title
-    direction: asc
+# defaultSort:
+#     column: created_at
+#     direction: desc
 
 # Display checkboxes next to each record
-showCheckboxes: false
+showCheckboxes: true
 
 # Toolbar widget configuration
 toolbar:

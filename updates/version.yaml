@@ -4,3 +4,6 @@
 1.0.4:
     - Fourth version of AppReadMe
     - create_readmes_table.php
+1.0.5:
+    - Fifth version of AppReadMe
+    - rename_readmes_table_to_documents_table.php

@@ -3,16 +3,16 @@
 use Model;
 
 /**
- * ReadMe Model
+ * Document Model
  */
-class ReadMe extends Model
+class Document extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string table associated with the model
      */
-    public $table = 'albrightlabs_appreadme_readmes';
+    public $table = 'albrightlabs_appreadme_documents';
 
     /**
      * @var array guarded attributes aren't mass assignable
@@ -37,7 +37,7 @@ class ReadMe extends Model
     /**
      * @var array jsonable attribute names that are json encoded and decoded from the database
      */
-    protected $jsonable = ['sections',];
+    protected $jsonable = [];
 
     /**
      * @var array appends attributes to the API representation of the model (ex. toArray())

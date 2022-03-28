@@ -18,7 +18,7 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'App ReadMe',
-            'description' => 'A plugin that allows for readme and docs to easily be added to any application.',
+            'description' => 'A plugin that allows for documentation to easily be added to any application.',
             'author'      => 'Albright Labs LLC',
             'icon'        => 'icon-file-text-o',
             'icon-svg'    => '/plugins/albrightlabs/appreadme/assets/images/plugin-icon.svg',
@@ -61,7 +61,7 @@ class Plugin extends PluginBase
         return [
             'albrightlabs.appreadme.manage_readmes' => [
                 'tab'   => 'App Readme',
-                'label' => 'Create, update, and delete App ReadMes'
+                'label' => 'Create, update, and delete application documentation'
             ],
         ];
     }
@@ -75,12 +75,12 @@ class Plugin extends PluginBase
     {
         return [
             'appreadme' => [
-                'label'       => 'App ReadMe(s)',
-                'description' => 'Read usage documentation for this application.',
-                'url'         => Backend::url('albrightlabs/appreadme/readmes'),
-                'icon'        => 'icon-question-circle',
+                'label'       => 'About & Documentation',
+                'description' => 'Read or manage documentation for this application.',
+                'url'         => Backend::url('albrightlabs/appreadme/documents'),
+                'icon'        => 'icon-file-text-o',
                 'category'    => 'About',
-                'keywords'    => 'about docs readme usage app',
+                'keywords'    => 'app readme docs about usage ',
                 'order'       => 100,
             ],
         ];

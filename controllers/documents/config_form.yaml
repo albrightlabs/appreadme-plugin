@@ -3,28 +3,28 @@
 # ===================================
 
 # Record name
-name: ReadMe
+name: Document
 
 # Model Form Field configuration
-form: $/albrightlabs/appreadme/models/readme/fields.yaml
+form: $/albrightlabs/appreadme/models/document/fields.yaml
 
 # Model Class name
-modelClass: Albrightlabs\AppReadMe\Models\ReadMe
+modelClass: Albrightlabs\AppReadMe\Models\Document
 
 # Default redirect location
-defaultRedirect: albrightlabs/appreadme/readmes
+defaultRedirect: albrightlabs/appreadme/documents
 
 # Create page
 create:
     title: backend::lang.form.create_title
-    redirect: albrightlabs/appreadme/readmes/preview/:id
-    redirectClose: albrightlabs/appreadme/readmes
+    redirect: albrightlabs/appreadme/documents/update/:id
+    redirectClose: albrightlabs/appreadme/documents
 
 # Update page
 update:
     title: backend::lang.form.update_title
-    redirect: albrightlabs/appreadme/readmes/preview/:id
-    redirectClose: albrightlabs/appreadme/readmes
+    redirect: albrightlabs/appreadme/documents
+    redirectClose: albrightlabs/appreadme/documents
 
 # Preview page
 preview:
