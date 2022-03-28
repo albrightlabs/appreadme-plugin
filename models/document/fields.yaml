@@ -21,3 +21,15 @@ fields:
                 content:
                     label: Content
                     type: richeditor
+                subsections:
+                    title: Sub-sections
+                    type: repeater
+                    titleFrom: title
+                    prompt: Add new sub-section
+                    form:
+                        fields:
+                            title:
+                                label: Title
+                            content:
+                                label: Content
+                                type: richeditor

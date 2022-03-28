@@ -37,7 +37,7 @@ class Document extends Model
     /**
      * @var array jsonable attribute names that are json encoded and decoded from the database
      */
-    protected $jsonable = [];
+    protected $jsonable = ['sections',];
 
     /**
      * @var array appends attributes to the API representation of the model (ex. toArray())
