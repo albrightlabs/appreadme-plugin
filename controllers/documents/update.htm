@@ -7,46 +7,51 @@
 
 <?php if (!$this->fatalError): ?>
 
-    <?= Form::open(['class' => 'layout']) ?>
+    <?php if ($this->user->hasAccess('albrightlabs.appreadme.manage_readmes')) { ?>
 
-        <div class="layout-row">
-            <?= $this->formRender() ?>
-        </div>
+        <?= Form::open(['class' => 'layout']) ?>
 
-        <div class="form-buttons">
-            <div class="loading-indicator-container">
-                <button
-                    type="submit"
-                    data-request="onSave"
-                    data-request-data="redirect:0"
-                    data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="<?= e(trans('backend::lang.form.saving_name', ['name'=>$formRecordName])) ?>"
-                    class="btn btn-primary">
-                    <?= e(trans('backend::lang.form.save')) ?>
-                </button>
-                <button
-                    type="button"
-                    data-request="onSave"
-                    data-request-data="close:1"
-                    data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="<?= e(trans('backend::lang.form.saving_name', ['name'=>$formRecordName])) ?>"
-                    class="btn btn-default">
-                    <?= e(trans('backend::lang.form.save_and_close')) ?>
-                </button>
-                <button
-                    type="button"
-                    class="oc-icon-trash-o btn-icon danger pull-right"
-                    data-request="onDelete"
-                    data-load-indicator="<?= e(trans('backend::lang.form.deleting_name', ['name'=>$formRecordName])) ?>"
-                    data-request-confirm="<?= e(trans('backend::lang.form.confirm_delete')) ?>">
-                </button>
-                <span class="btn-text">
-                    <?= e(trans('backend::lang.form.or')) ?> <a href="<?= Backend::url('albrightlabs/appreadme/documents') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>
-                </span>
+            <div class="layout-row">
+                <?= $this->formRender() ?>
             </div>
-        </div>
 
-    <?= Form::close() ?>
+            <div class="form-buttons">
+                <div class="loading-indicator-container">
+                    <button
+                        type="submit"
+                        data-request="onSave"
+                        data-request-data="redirect:0"
+                        data-hotkey="ctrl+s, cmd+s"
+                        data-load-indicator="<?= e(trans('backend::lang.form.saving_name', ['name'=>$formRecordName])) ?>"
+                        class="btn btn-primary">
+                        <?= e(trans('backend::lang.form.save')) ?>
+                    </button>
+                    <button
+                        type="button"
+                        data-request="onSave"
+                        data-request-data="close:1"
+                        data-hotkey="ctrl+enter, cmd+enter"
+                        data-load-indicator="<?= e(trans('backend::lang.form.saving_name', ['name'=>$formRecordName])) ?>"
+                        class="btn btn-default">
+                        <?= e(trans('backend::lang.form.save_and_close')) ?>
+                    </button>
+                    <button
+                        type="button"
+                        class="oc-icon-trash-o btn-icon danger pull-right"
+                        data-request="onDelete"
+                        data-load-indicator="<?= e(trans('backend::lang.form.deleting_name', ['name'=>$formRecordName])) ?>"
+                        data-request-confirm="<?= e(trans('backend::lang.form.confirm_delete')) ?>">
+                    </button>
+                    <span class="btn-text">
+                        <?= e(trans('backend::lang.form.or')) ?> <a href="<?= Backend::url('albrightlabs/appreadme/documents') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>
+                    </span>
+                </div>
+            </div>
+
+        <?= Form::close() ?>
+
+    <?php } ?>
+
 
 <?php else: ?>
 
