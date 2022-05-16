@@ -4,6 +4,6 @@
     "description": "Provides the ability to easily add about and usage documents to the admin area settings panel.",
     "require": {
         "composer/installers": "~1.0",
-        "october/system": "^2.0"
+        "october/system": ">=2.0"
     }
 }
