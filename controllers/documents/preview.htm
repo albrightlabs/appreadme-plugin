@@ -11,21 +11,19 @@
 
         <h1 class="h3 readme-title"><?= $formModel->title ?></h1>
 
+        <?php
+            $timezone = 'UTC';
+            if($preferences = \Backend\Models\UserPreference::where('user_id', $this->user->id)->where('namespace','backend')->where('group','backend')->where('item','preferences')->first()){ $timezone = $preferences->value['timezone'] ?? 'UTC'; }
+            $created_at = new DateTime(date('r', strtotime($formModel->created_at)));
+            $created_at->setTimezone(new DateTimeZone($timezone));
+            $updated_at = new DateTime(date('r', strtotime($formModel->updated_at)));
+            $updated_at->setTimezone(new DateTimeZone($timezone));
+        ?>
+
         <div id="readme-meta" class="text-muted">
-
-<?php
-$timezone = 'UTC';
-if($user = BackendAuth::getUser()){
-    if($pref = \Backend\Models\UserPreference::where('user_id', $user->id)->where('namespace','backend')->where('item','preferences')->first()){
-        $timezone = $pref->timezone ?? 'UTC';
-    }
-}
-echo $timezone;
-?>
-
-          Updated <?= date('n/j/Y g:ia', strtotime($formModel->updated_at)); ?>
-          &nbsp; &bull; &nbsp;
-          Created <?= date('n/j/Y g:ia', strtotime($formModel->created_at)); ?>
+          Updated <?= $updated_at->format('n/j/Y g:ia'); ?>
+          &nbsp;&bull;&nbsp;
+          Created <?= $created_at->format('n/j/Y g:ia'); ?>
         </div>
 
         <?php if(null != $formModel->sections){ ?>
