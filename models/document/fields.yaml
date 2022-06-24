@@ -21,6 +21,20 @@ fields:
                 content:
                     label: Content
                     type: richeditor
+                    trigger:
+                        field: is_plain_text
+                        action: hide
+                        condition: checked
+                content_text:
+                    label: Content
+                    type: textarea
+                    trigger:
+                        field: is_plain_text
+                        action: show
+                        condition: checked
+                is_plain_text:
+                    label: Use plain text
+                    type: checkbox
                 subsections:
                     title: Sub-sections
                     type: repeater
@@ -33,4 +47,18 @@ fields:
                             content:
                                 label: Content
                                 type: richeditor
+                                trigger:
+                                    field: is_plain_text
+                                    action: hide
+                                    condition: checked
+                            content_text:
+                                label: Content
+                                type: textarea
+                                trigger:
+                                    field: is_plain_text
+                                    action: show
+                                    condition: checked
+                            is_plain_text:
+                                label: Use plain text
+                                type: checkbox
                     cssClass: field-index

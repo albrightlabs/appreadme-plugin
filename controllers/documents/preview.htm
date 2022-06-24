@@ -12,6 +12,17 @@
         <h1 class="h3 readme-title"><?= $formModel->title ?></h1>
 
         <div id="readme-meta" class="text-muted">
+
+<?php
+$timezone = 'UTC';
+if($user = BackendAuth::getUser()){
+    if($pref = \Backend\Models\UserPreference::where('user_id', $user->id)->where('namespace','backend')->where('item','preferences')->first()){
+        $timezone = $pref->timezone ?? 'UTC';
+    }
+}
+echo $timezone;
+?>
+
           Updated <?= date('n/j/Y g:ia', strtotime($formModel->updated_at)); ?>
           &nbsp; &bull; &nbsp;
           Created <?= date('n/j/Y g:ia', strtotime($formModel->created_at)); ?>
@@ -46,13 +57,21 @@
                 <?php foreach($sections as $index => $section){ ?>
                     <div id="readme-section-<?= $index ?>" class="readme-section">
                         <h2 class="h4 readme-section-title"><?= $section['title'] ?></h2>
-                        <?= $section['content'] ?>
+                        <?php if(isset($section['is_plain_text']) && $section['is_plain_text']){ ?>
+                            <?= nl2br(htmlentities($section['content_text'])) ?>
+                        <?php } else{ ?>
+                            <?= $section['content'] ?>
+                        <?php } ?>
                     </div>
                     <?php if($subsections = $section['subsections']){ ?>
                         <?php foreach($subsections as $subindex => $subsection){ ?>
                             <div id="readme-section-<?= $index ?>-<?= $subindex ?>" class="readme-section">
                                 <h3 class="h5 readme-subsection-title"><?= $subsection['title'] ?></h3>
-                                <?= $subsection['content'] ?>
+                                <?php if(isset($subsection['is_plain_text']) && $subsection['is_plain_text']){ ?>
+                                    <?= nl2br(htmlentities($subsection['content_text'])) ?>
+                                <?php } else{ ?>
+                                    <?= $subsection['content'] ?>
+                                <?php } ?>
                             </div>
                         <?php } ?>
                     <?php } ?>
